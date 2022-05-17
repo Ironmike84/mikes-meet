@@ -60,6 +60,7 @@ module.exports.getAccessToken = async (event) => {
     const code = decodeURIComponent(`${event.pathParameters.code}`);
   
     return new Promise((resolve, reject) => {
+      
       /**
        *  Exchange authorization code for access token with a “callback” after the exchange,
        *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
@@ -81,7 +82,7 @@ module.exports.getAccessToken = async (event) => {
           headers: {
             'Access-Control-Allow-Origin': '*',
             'mode':'no-cors',
-          },
+          },    
           body: JSON.stringify(token),
         };
       })
