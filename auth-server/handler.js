@@ -41,14 +41,14 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'mode':'no-cors',
     },
     body: JSON.stringify({
       authUrl: authUrl,
     }),
   };
 };
-
 module.exports.getAccessToken = async (event) => {
   // The values used to instantiate the OAuthClient are at the top of the file
     const oAuth2Client = new google.auth.OAuth2(
@@ -66,16 +66,22 @@ module.exports.getAccessToken = async (event) => {
        */
   
       oAuth2Client.getToken(code, (err, token) => {
+        
         if (err) {
           return reject(err);
         }
         return resolve(token);
       });
+      
     })
       .then((token) => {
         // Respond with OAuth token 
         return {
           statusCode: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'mode':'no-cors',
+          },
           body: JSON.stringify(token),
         };
       })
