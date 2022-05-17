@@ -46,13 +46,15 @@
       const resultElement = document.getElementById("result");
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
-      const getAuthURL = "https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&response_type=code&client_id=245511692669-2a6rdk6jccfm1hido7c5psvp5g1f7j2b.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fironmike84.github.io%2Fmikes-meet%2F";
+      const getAuthURL = "https://1t0agvgrs6.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
       getURLElement.onclick = function () {
+        
         fetch(getAuthURL)
+          
           .then(function (response) {
-            return response.json();
-          })
+            return response.json()
+        })
           .then(function (json) {
             const result = JSON.stringify(json);
             // we get the value of authUrl
@@ -60,16 +62,16 @@
             // then add it to the html
             resultElement.innerText = result;
             resultLink.href = authUrl;
-          });
+              });
       };
+      
       // --------------------- END OF STEP 1
 
       // --------------------- STEP 2
       const codeValue = document.getElementById("code");
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
-      const getToken =
-        "https://eu-central-1.console.aws.amazon.com/lambda/home?region=eu-central-1#/functions/auth-server-dev-getAuthURL?tab=code";
+      const getToken = `https://1t0agvgrs6.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}`;
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
