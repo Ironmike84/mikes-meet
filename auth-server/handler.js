@@ -20,7 +20,7 @@ const credentials = {
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
   redirect_uris: ["https://ironmike84.github.io/mikes-meet"],
-  javascript_origins: ["https://ironmike.github.io"],
+  javascript_origins: ["https://ironmike.github.io", "http://127.0.0.1:8080"],
 };
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 const oAuth2Client = new google.auth.OAuth2(
@@ -60,8 +60,7 @@ module.exports.getAccessToken = async (event) => {
     const code = decodeURIComponent(`${event.pathParameters.code}`);
   
     return new Promise((resolve, reject) => {
-      
-      /**
+            /**
        *  Exchange authorization code for access token with a “callback” after the exchange,
        *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
        */
@@ -81,7 +80,6 @@ module.exports.getAccessToken = async (event) => {
           statusCode: 200,
           headers: {
             'Access-Control-Allow-Origin': '*',
-            'mode':'no-cors',
           },    
           body: JSON.stringify(token),
         };
