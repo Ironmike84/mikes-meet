@@ -13,12 +13,16 @@ provider:
 functions:
   getAuthURL:
     handler: handler.getAuthURL
+    url:
+      cors: false
     events:
       - http:
           path: api/get-auth-url
           method: get
   getAccessToken:
     handler: handler.getAccessToken
+    url:
+      cors: false
     events:
       - http:
           path: api/token/{code}
