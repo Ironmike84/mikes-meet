@@ -48,7 +48,7 @@
       const resultElement = document.getElementById("result");
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
-      const getAuthURL = "https://1t0agvgrs6.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
+      const getAuthURL = "https://qf3nogtl52.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url";
 
       getURLElement.onclick = function () {
         
@@ -73,16 +73,16 @@
       const codeValue = document.getElementById("code");
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
-      const getToken = `https://1t0agvgrs6.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}`;
+      const getToken = 'https://qf3nogtl52.execute-api.us-east-1.amazonaws.com/dev/api/token/{code}';
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
 
         // if the authorization code is not URL-encoded, then URL-encode it.
-        if (decodeURIComponent(code) === code) {
-          code = encodeURIComponent(codeValue.value);
-        }
-        const getTokenRequest = getToken + "/" + code;
+        // if (decodeURIComponent(code) === code) {
+        //   code = encodeURIComponent(codeValue.value);
+        // }
+        const getTokenRequest = getToken + "/" + code
         fetch(getTokenRequest)
           .then(function (response) {
             return response.json();
