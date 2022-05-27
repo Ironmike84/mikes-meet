@@ -52,5 +52,16 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ironmike84/mikes-meet.git"
+  },
+  "author": "Mike Gross",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ironmike84/mikes-meet/issues"
+  },
+  "description": ""
 }
