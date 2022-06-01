@@ -1,4 +1,4 @@
-const MockData = [
+const mockData = [
     {
      "kind": "calendar#event",
      "etag": "\"3181161784712000\"",
@@ -78,4 +78,4 @@ const MockData = [
      "eventType": "default"
     }]
 
-    export {MockData};
+    export {mockData};
