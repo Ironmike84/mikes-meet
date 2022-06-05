@@ -78,4 +78,4 @@ const mockData = [
      "eventType": "default"
     }]
 
-    export {mockData};
+    export default mockData;
