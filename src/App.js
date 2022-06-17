@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch />
-        <EventList events={this.state.events}/>
+        <EventList events={mockData}/>
         <NumberOfEvents/>
         </div>
     );
