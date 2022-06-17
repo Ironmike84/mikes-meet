@@ -9,7 +9,7 @@ import NumberOfEvents from './NumberOfEvents';
 
 class App extends Component {
   state = {
-    events: mockData
+    events: []
   }
   render() {
     return (
