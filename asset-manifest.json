@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/mikes-meet/static/css/main.073c9b0a.css",
-    "main.js": "/mikes-meet/static/js/main.2da05a77.js",
+    "main.js": "/mikes-meet/static/js/main.a2baeda7.js",
     "static/js/787.f48af6f3.chunk.js": "/mikes-meet/static/js/787.f48af6f3.chunk.js",
     "service-worker.js": "/mikes-meet/service-worker.js",
     "index.html": "/mikes-meet/index.html",
     "main.073c9b0a.css.map": "/mikes-meet/static/css/main.073c9b0a.css.map",
-    "main.2da05a77.js.map": "/mikes-meet/static/js/main.2da05a77.js.map",
+    "main.a2baeda7.js.map": "/mikes-meet/static/js/main.a2baeda7.js.map",
     "787.f48af6f3.chunk.js.map": "/mikes-meet/static/js/787.f48af6f3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.2da05a77.js"
+    "static/js/main.a2baeda7.js"
   ]
 }
